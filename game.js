@@ -34,3 +34,26 @@ let questions = [
     answer: 4
   }
 ];
+
+//CONSTANTS
+
+const CORRECT_BONUS = 10;
+const MAX_QUESTION = 3;
+
+startGame = () => {
+  questionCounter = 0;
+  score = 0;
+  availableQuestions = [...questions]; // takes questions and puts them into an array split by questions
+  console.log(availableQuestions);
+  getNewQuestion();
+}
+
+getNewQuestion = () => {
+  questionCounter++;
+  const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+    currentQuestion = availableQuestions[questionIndex];
+    question.innerText = currentQuestion.question;
+}
+
+
+startGame();
