@@ -18,7 +18,7 @@ let questions = [
     answer: 1
   },
   {
-    question: "What is the correct syntax for reffering to an external script called 'xxx.js",
+    question: "What is the correct syntax for reffering to an external script called 'xxx.js'",
     choice1: "<script href='xxx.js'>",
     choice2: "<script name='xxx.js'>",
     choice3: "<script src='xxx.js'>",
@@ -44,7 +44,6 @@ startGame = () => {
   questionCounter = 0;
   score = 0;
   availableQuestions = [...questions]; // takes questions and puts them into an array split by questions
-  console.log(availableQuestions);
   getNewQuestion();
 }
 
@@ -65,7 +64,6 @@ getNewQuestion = () => {
   });
 
   availableQuestions.splice(questionIndex, 1);
-
   acceptingAnswers = true;
 };
 
@@ -75,8 +73,9 @@ choices.forEach( choice => {
 
     acceptingAnswers = false;
     const selectedChoice = e.target;
-    const selectedAnswer = selectedChoice.dataset['answer'];
-    console.log(selectedAnswer);
+    const selectedAnswer = selectedChoice.dataset['number'];
+
+    console.log(selectedAnswer == currentQuestion.answer);
     getNewQuestion();
   }); 
 })
