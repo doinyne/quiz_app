@@ -76,11 +76,13 @@ choices.forEach( choice => {
     const selectedAnswer = selectedChoice.dataset['number'];
 
     const classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
-    console.log(classToApply);
 
+    selectedChoice.parentElement.classList.add(classToApply);
 
-    console.log(selectedAnswer == currentQuestion.answer);
-    getNewQuestion();
+    setTimeout( () => {
+      selectedChoice.parentElement.classList.remove(classToApply);
+      getNewQuestion();
+    }, 1000);
   }); 
 })
 
