@@ -13,7 +13,7 @@ let questions = [
   {
     question: "Inside which HTML element do we put the JavaScript?",
     choice1: "<script>",
-    choice2: "<javascript",
+    choice2: "<javascript>",
     choice3: "<js>",
     choice4: "<scripting>",
     answer: 1
@@ -81,6 +81,10 @@ choices.forEach( choice => {
 
     const classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
 
+    if (classToApply === 'correct') {
+      incrementScore(CORRECT_BONUS);
+    }
+
     selectedChoice.parentElement.classList.add(classToApply);
 
     setTimeout( () => {
@@ -90,5 +94,9 @@ choices.forEach( choice => {
   }); 
 })
 
+incrementScore = num => {
+  score += num;
+  scoreText.innerText = score;
+};
 
 startGame();
