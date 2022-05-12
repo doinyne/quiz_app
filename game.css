@@ -49,3 +49,8 @@
   text-align: center;
 }
 
+#progressBar {
+  width: 20rem;
+  height: 4rem;
+  border: 0.3rem solid #56a5eb;
+}
