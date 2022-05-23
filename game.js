@@ -12,14 +12,14 @@ let availableQuestions = [];
 
 let questions = [];
 
-fetch("questions.json")
+fetch("https://opentdb.com/api.php?amount=10&category=21&difficulty=medium&type=multiple")
   .then(res => {
     return res.json();
   })
   .then(loadedQuestions => {
-    console.log(loadedQuestions);
-    questions = loadedQuestions;
-    startGame();
+    console.log(loadedQuestions.results);
+    //questions = loadedQuestions;
+    //startGame();
   })
   .catch(err => {
     console.error(err);
