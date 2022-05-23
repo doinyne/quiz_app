@@ -44,7 +44,7 @@ fetch("https://opentdb.com/api.php?amount=10&category=21&difficulty=medium&type=
 //CONSTANTS
 
 const CORRECT_BONUS = 10;
-const MAX_QUESTIONS = 3;
+const MAX_QUESTIONS = 10;
 
 startGame = () => {
   questionCounter = 0;
